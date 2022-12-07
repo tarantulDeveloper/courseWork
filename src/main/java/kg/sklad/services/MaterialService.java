@@ -11,4 +11,5 @@ public interface MaterialService {
     Boolean addMaterial(MultipartFile file, String productName, double price, int quantity) throws Exception;
 
 
+    Material findById(int id);
 }

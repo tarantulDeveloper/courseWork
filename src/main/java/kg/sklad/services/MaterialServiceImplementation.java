@@ -1,6 +1,7 @@
 package kg.sklad.services;
 
 import kg.sklad.entities.Material;
+import kg.sklad.exceptions.ResourceNotFoundException;
 import kg.sklad.repository.MaterialRepo;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
@@ -47,5 +48,14 @@ public class MaterialServiceImplementation implements MaterialService{
         } catch (Exception e) {
             throw new Exception("Could not save file: " + fileName);
         }
+    }
+
+    @Override
+    public Material findById(int id) {
+        return materialRepo.findById(id).orElseThrow(
+                () -> new ResourceNotFoundException("Material with id " + id + " not found.")
+        );
+
+
     }
 }

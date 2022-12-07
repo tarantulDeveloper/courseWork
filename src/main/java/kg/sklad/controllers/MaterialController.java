@@ -9,7 +9,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/material")
 @CrossOrigin(origins = "http://localhost:3000")
 public class MaterialController {
 
@@ -23,6 +23,11 @@ public class MaterialController {
     @GetMapping()
     public List<Material> getAllMaterials() {
         return materialService.findAll();
+    }
+
+    @GetMapping("/{id}")
+    public Material getMaterial(@PathVariable("id") int id) {
+        return materialService.findById(id);
     }
 
     @PostMapping()
