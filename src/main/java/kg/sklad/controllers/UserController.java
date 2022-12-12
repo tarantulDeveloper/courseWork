@@ -35,7 +35,7 @@ public class UserController {
     //Cookie part
     @GetMapping("/set-cookie")
     public ResponseEntity<?> setCookie(HttpServletResponse response) {
-        Cookie cookie = new Cookie("loved", "Bermet");
+        Cookie cookie = new Cookie("loved", "only me");
         cookie.setPath("/yep");
         cookie.setHttpOnly(true);
         cookie.setMaxAge(86400);

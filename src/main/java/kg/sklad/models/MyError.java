@@ -2,12 +2,13 @@ package kg.sklad.models;
 
 public class MyError {
     private int statusCode;
-    private String messsage;
+    private String message;
 
     public MyError(int statusCode, String messsage) {
         this.statusCode = statusCode;
-        this.messsage = messsage;
+        this.message = messsage;
     }
+
 
     public int getStatusCode() {
         return statusCode;
@@ -18,10 +19,10 @@ public class MyError {
     }
 
     public String getMesssage() {
-        return messsage;
+        return message;
     }
 
     public void setMesssage(String messsage) {
-        this.messsage = messsage;
+        this.message = messsage;
     }
 }
